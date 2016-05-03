@@ -18,8 +18,8 @@ if( isset( $_POST['template-contactform-submit'] ) AND $_POST['template-contactf
 
 		$botcheck = $_POST['template-contactform-botcheck'];
 
-		$toemail = 'username@email.com'; // Your Email Address
-		$toname = 'Your Name'; // Your Name
+		$toemail = 'allinonemarinesolutions@gmail.com'; // Your Email Address
+		$toname = 'Marine Solutions Inc'; // Your Name
 
 		require_once('recaptchalib.php');
 		$privatekey = "yourprivatekey";
