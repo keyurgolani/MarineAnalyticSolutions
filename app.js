@@ -36,7 +36,77 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.post('/marine',marine.paramRead);
+//app.get('/aquaculturist',marine.paramRead);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+
+// 
+
+
+
+
+app.get('/Oceanography', function(req, res) {
+	   res.render('presentation/oceanography', { });
+	});
+
+app.get('/OceanEngineering', function(req, res) {
+	   res.render('presentation/oceanEngineering', { });
+	});
+
+app.get('/MarineBiologist', function(req, res) {
+	   res.render('presentation/marineBiiologist', { });
+	});
+
+app.get('/MarineEchologist', function(req, res) {
+	   res.render('presentation/marineEchologist', { });
+	});
+
+
+app.get('/BiologyResearcher', function(req, res) {
+	   res.render('presentation/biologyResearcher', { });
+	});
+
+app.get('/UnderwaterArcheologist', function(req, res) {
+	   res.render('presentation/underwaterArcheologist', { });
+	});
+
+app.get('/Aquaculturist', function(req, res) {
+	   res.render('presentation/aquaculturist', { });
+	});
+
+app.get('/Fisherman', function(req, res) {
+	   res.render('presentation/fisherman', { });
+	});
+
+
+app.get('/SocialandPolicyScience', function(req, res) {
+	   res.render('presentation/socialandPolicyScience', { });
+	});
+
+
+app.get('/EnvironmentEnthusist', function(req, res) {
+	   res.render('presentation/environmentEnthusist', { });
+	});
+
+
+app.get('/ClimateResearcher', function(req, res) {
+	   res.render('presentation/climateResearcher', { });
+	});
+
+app.get('/OceanAdvocate', function(req, res) {
+	   res.render('presentation/oceanAdvocate', { });
+	});
+
+app.get('/AquaticEchologyTechnician', function(req, res) {
+	   res.render('presentation/aquaticEchologyTechnician', { });
+	});
+
+app.get('/UnderwaterCinematographer', function(req, res) {
+	   res.render('presentation/underwaterCinematographer', { });
+	});
+
+app.get('/EnvironmentalEducator', function(req, res) {
+	   res.render('presentation/environmentalEducator', { });
+	});
