@@ -59,7 +59,7 @@ http.createServer(app).listen(app.get('port'), function(){
 
 
 app.get('/Oceanography', function(req, res) {
-	   res.render('presentation/oceanography', { });
+	   res.render('presentation/oceanologist', { });
 	});
 
 app.get('/OceanEngineering', function(req, res) {
