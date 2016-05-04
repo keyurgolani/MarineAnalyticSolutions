@@ -40,25 +40,12 @@ app.post('/marine',marine.paramRead);
 
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : '',
-    database: "database name"
+    host     : 'marineanalyticsolutions.cc3hroyhbtoe.us-west-2.rds.amazonaws.com',
+    user     : 'admin',
+    password : 'admin12345',
+    database: "marine"
 });
-app.get('/totalDelivery', function (req, res) {
-    var query = "SELECT id,COUNT(num) AS total from table1 GROUP BY id";
-    connection.query(query, function (err, result) {
-        if (err) {
-            throw err;
-        }
-        else {
-            //console.log(result);
-            //console.log(result[0].productname);
-            //console.log(JSON.stringify(result));
-            res.send(result);
-        }
-    });
-});
+
 
 
 
