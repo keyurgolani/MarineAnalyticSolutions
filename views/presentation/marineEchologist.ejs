@@ -32,9 +32,11 @@
 	<!-- TODO: http://htmlcheats.com/examples/revealjs/switchtheme.html -->
 
 	<script src="/js/vendor/modernizr-2.6.2.min.js"></script>
-	<!--[if lt IE 9]>
 	<script src="lib/js/html5shiv.js"></script>
-	<![endif]-->
+	<script src="/js/vendor/jquery-1.9.1.min.js"></script>
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
 	<style type="text/css">
 		.back-link a {
@@ -75,7 +77,82 @@
 <body class="notLoaded">
 <!--[if lt IE 7]>
 <![endif]-->
+<script>
+	$(document).ready(function () {
+alert("hi");
+		function load() {
+			$.ajax({ //create an ajax request to load_page.php
+				type: "GET",
+				url: "/totalDelivery",
+				success: generateChart
+			});
+		}
 
+		load(); //if you don't want the click
+//		$("#display").click(load); //if you want to start the display on click
+	});
+
+	function generateChart(a) {
+		var b = processData(a);
+		var chart = new Highcharts.Chart({
+//		$('#container').highcharts({
+			chart: {
+				type: 'column'        ,
+				 renderTo: 'container'
+			},
+			title: {
+				text: 'Total Delivery Area Wise Statistics'
+			},
+			xAxis: {
+				type: 'category',
+				labels: {
+					rotation: -45,
+					style: {
+						fontSize: '13px',
+						fontFamily: 'Verdana, sans-serif'
+					}
+				}
+			},
+			yAxis: {
+				min: 0,
+				title: {
+					text: 'Total Delivery Area Wise'
+				}
+			},
+			legend: {
+				enabled: false
+			},
+			tooltip: {
+				pointFormat: 'Average Revenue Per day: <b>{point.y:.1f} millions</b>'
+			},
+			series: [{
+				name: 'Population',
+				data: b,
+				dataLabels: {
+					enabled: true,
+					rotation: -90,
+					color: '#FFFFFF',
+					align: 'right',
+					format: '{point.y:.1f}', // one decimal
+					y: 10, // 10 pixels down from the top
+					style: {
+						fontSize: '13px',
+						fontFamily: 'Verdana, sans-serif'
+					}
+				}
+			}]
+		});
+
+		function processData(data) {
+			var newData = [];
+			for(var i = 0 ; i < data.length ; i++) {
+				newData.push([data[i].id,data[i].total]);
+			}
+			return newData;
+		}
+	}
+
+</script>
 
 <!-- <div id="outerDiv"> -->
 
