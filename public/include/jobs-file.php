@@ -24,8 +24,8 @@ if( isset( $_POST['template-jobform-apply'] ) AND $_POST['template-jobform-apply
 
 	$botcheck = $_POST['template-jobform-botcheck'];
 
-	$toemail = 'username@email.com'; // Your Email Address
-	$toname = 'Your Name'; // Your Name
+	$toemail = 'allinonemarinesolutions@gmail.com'; // Your Email Address
+	$toname = 'Marine Solutions Inc'; // Your Name
 
 	if( $botcheck == '' ) {
 
