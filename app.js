@@ -38,6 +38,30 @@ app.get('/users', user.list);
 app.post('/marine',marine.paramRead);
 //app.get('/aquaculturist',marine.paramRead);
 
+var mysql      = require('mysql');
+var connection = mysql.createConnection({
+    host     : 'localhost',
+    user     : 'root',
+    password : '',
+    database: "database name"
+});
+app.get('/totalDelivery', function (req, res) {
+    var query = "SELECT id,COUNT(num) AS total from table1 GROUP BY id";
+    connection.query(query, function (err, result) {
+        if (err) {
+            throw err;
+        }
+        else {
+            //console.log(result);
+            //console.log(result[0].productname);
+            //console.log(JSON.stringify(result));
+            res.send(result);
+        }
+    });
+});
+
+
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
