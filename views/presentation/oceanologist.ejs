@@ -32,6 +32,7 @@
 	<!-- TODO: http://htmlcheats.com/examples/revealjs/switchtheme.html -->
 
 	<script src="/js/vendor/modernizr-2.6.2.min.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 	<!--[if lt IE 9]>
 	<script src="lib/js/html5shiv.js"></script>
 	<![endif]-->
@@ -76,6 +77,9 @@
 <!--[if lt IE 7]>
 <![endif]-->
 
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="/js/dark-blue.js"></script>
 
 	<!-- <div id="outerDiv"> -->
 
@@ -130,11 +134,21 @@
 					See Detailed Oil Reserves
 				</p>
 			</section>
-			<section id="section3.2_id">
-
+			<section id="section3.2_id" data-state="stats3">
+				<h1>Analyse Sea Level</h1>
+				<p>
+				Ocean Level is rising every year due to melting of Ice
+				<div id="container3" style="min-witdh: 310px; height: 400px; margin: 0 auto">
+				</div>
+				</p>
 			</section>
-			<section id="section3.3_id">
-
+			<section id="section3.3_id" data-state="stats4">
+				<h1>Analyse Ice Body</h1>
+				<p>
+				Glaciers are melting in Antarctica
+				<div id="container4" style="min-witdh: 310px; height: 400px; margin: 0 auto">
+				</div>
+				</p>
 			</section>
 		</section>
 
@@ -209,6 +223,106 @@
       transition: Reveal.getQueryHash().transition || 'default' // default/cube/page/concave/zoom/linear/fade/none
 
 		});
+	</script>
+	<script>
+	Reveal.addEventListener( 'stats4', function () {
+
+		var chart = new Highcharts.Chart({
+									colors: ["#7cb5ec", "#f7a35c"],
+									chart: {
+											type: 'line',
+											renderTo: 'container4'
+									},
+
+					title: {
+							text: 'Ice Mass Decrease in Antarctica',
+							x: -20 //center
+					},
+					subtitle: {
+							text: 'Taking year 2000 as base',
+							x: -20
+					},
+					xAxis: {
+						title:{
+						text: 'Year'
+						},
+							categories: ['2000', '2002', '2004', '2006', '2008', '2010', '2012', '2014']
+					},
+					yAxis: {
+							title: {
+									text: 'Ice Mass Decrease (billion metric tons)'
+							},
+							plotLines: [{
+									value: 0,
+									width: 1,
+									color: '#808080'
+							}]
+					},
+					tooltip: {
+							valueSuffix: 'billion matric tons'
+					},
+					legend: {
+							layout: 'vertical',
+							align: 'right',
+							verticalAlign: 'middle',
+							borderWidth: 0
+					},
+					series: [{
+							name: 'Ice Mass Decrease',
+							data: [0, 236, 483, 621, 789, 985, 1368, 1643]
+					}]
+			});
+	});
+
+	Reveal.addEventListener( 'stats3', function() {
+		var chart = new Highcharts.Chart({
+									colors: ["#7cb5ec", "#f7a35c"],
+									chart: {
+											type: 'line',
+											renderTo: 'container3'
+									},
+
+					title: {
+							text: 'Sea Level Increase',
+							x: -20 //center
+					},
+					subtitle: {
+							text: 'Taking year 1880 as base',
+							x: -20
+					},
+					xAxis: {
+						title:{
+						text: 'Year'
+						},
+							categories: ['1880', '1900', '1920', '1940', '1960', '1980', '2000', '2015']
+					},
+					yAxis: {
+							title: {
+									text: 'Sealevel (mm)'
+							},
+							plotLines: [{
+									value: 0,
+									width: 1,
+									color: '#808080'
+							}]
+					},
+					tooltip: {
+							valueSuffix: 'mm'
+					},
+					legend: {
+							layout: 'vertical',
+							align: 'right',
+							verticalAlign: 'middle',
+							borderWidth: 0
+					},
+					series: [{
+							name: 'Sealevel',
+							data: [0, 24, 52, 64, 92, 138, 186, 245]
+					}]
+			});
+	});
+
+
 	</script>
 	<script src="/js/main.js"></script>
 	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
