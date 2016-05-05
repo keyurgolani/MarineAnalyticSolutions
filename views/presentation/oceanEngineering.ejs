@@ -78,6 +78,7 @@
 <![endif]-->
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="/js/dark-blue.js"></script>
 
 	<!-- <div id="outerDiv"> -->
 
@@ -107,69 +108,57 @@
 		</section>
 
 		<section id="section2_id">
-		<h1>Resources in the Ocean</h1>
+		<h1>Obstacles He Faces</h1>
 		<ul>
 			<li>
-				Coral Reefs
+				Sea Level and Pressure influences all the plans
 			</li>
 			<li>
-				Pearls
+				Ocean pH Level/Acidity corroses the equipment as well as constructions
 			</li>
 			<li>
-				Plants
-			</li>
-			<li>
-				Shells
-			</li>
-			<li>
-				Oil and Gas Deposits
+				Ocean Temperature affects Equipment Operability and Construction
 			</li>
 		</ul>
 		</section>
 
 		<section id="section3_id">
-			<section id="section3.1_id">
-				<h1>Ocean Atmosphere</h1>
+			<section id="section3.1_id" data-state="stats1">
+				<h1>Analyse Sea Level</h1>
 				<p>
-					Gases in the ocean
+				Ocean Level is rising every year due to melting of Ice
+				<div id="container1" style="min-witdh: 310px; height: 400px; margin: 0 auto">
+				</div>
 				</p>
 			</section>
-			<section id="section3.2_id">
+			<section id="section3.2_id" data-state="stats2">
+				<h1>Analyse Acidity</h1>
+				<p>
+				Oceans are becoming Acidic because of increase in water CO2 level
+				<div id="container2" style="min-witdh: 310px; height: 400px; margin: 0 auto">
+				</p>
 
 			</section>
-			<section id="section3.3_id">
-
+			<section id="section3.3_id" data-state="stats3">
+				<h1>Analyse Heat</h1>
+				<p>
+				Water Temperature is rising every year
+				<div id="container3" style="min-witdh: 310px; height: 400px; margin: 0 auto">
+				</p>
 			</section>
 		</section>
 
 		<section id="section4_id">
-		<h1>Ocean Living Beings</h1>
-		<p>
-			Animals in the Ocean
-		</p>
+		<h1>What Can He Benefit?</h1>
+		<h2>
+			Pretty Much Everything!
+		</h2>
+		<ul>
+			<li>You can use sea level and pressure data to estimate the pressure as well as pressure changes in future.</li>
+			<li>Also can use pH level data to predict corrosion on equipment and structures.</li>
+			<li>And, with temprature data you can estimate the operability of equipments underwater in different conditions.</li>
+		</ul>
 		</section>
-
-		<section id="section5_id">
-		<h1>Fish</h1>
-		<p>
-			Breeds of Fish
-		</p>
-		</section>
-
-		<section id="section6_id">
-		<h1>Whales</h1>
-		<p>
-			13% of Sharks have died because of Water Contamination.
-		</p>
-		</section>
-
-		<section id="section7_id">
-		<h1>Sharks</h1>
-		<p>
-			Reproduction Rates of Sharks gone down by 7%
-		</p>
-		</section>
-
 		</div>
 		</div>
 
@@ -213,6 +202,153 @@
       transition: Reveal.getQueryHash().transition || 'default' // default/cube/page/concave/zoom/linear/fade/none
 
 		});
+	</script>
+	<script>
+	Reveal.addEventListener( 'stats3', function () {
+
+		var chart = new Highcharts.Chart({
+	                colors: ["#7cb5ec", "#f7a35c"],
+	                chart: {
+	                    type: 'line',
+	                    renderTo: 'container3'
+	                },
+
+	        title: {
+	            text: 'Ocean Water Temperature Increase',
+	            x: -20 //center
+	        },
+	        subtitle: {
+	            text: 'Taking year 1920 as base',
+	            x: -20
+	        },
+	        xAxis: {
+	        	title:{
+	        	text: 'Year'
+	        	},
+	            categories: ['1880', '1900', '1920', '1940', '1960', '1980', '2000', '2015']
+	        },
+	        yAxis: {
+	            title: {
+	                text: 'Temperature Increase in Deg Celcius'
+	            },
+	            plotLines: [{
+	                value: 0,
+	                width: 1,
+	                color: '#808080'
+	            }]
+	        },
+					tooltip: {
+							valueSuffix: '°C'
+					},
+	        legend: {
+	            layout: 'vertical',
+	            align: 'right',
+	            verticalAlign: 'middle',
+	            borderWidth: 0
+	        },
+	        series: [{
+	            name: 'Temperature Increase',
+	            data: [0.5, 0.3, 0, 0.4, 0.6, 1.1, 1.4, 1.9]
+	        }]
+	    });
+	});
+
+	Reveal.addEventListener( 'stats2', function () {
+
+		var chart = new Highcharts.Chart({
+	                colors: ["#7cb5ec", "#f7a35c"],
+	                chart: {
+	                    type: 'line',
+	                    renderTo: 'container2'
+	                },
+
+	        title: {
+	            text: 'Ocean water pH level Increase',
+	            x: -20 //center
+	        },
+	        subtitle: {
+	            text: '',
+	            x: -20
+	        },
+	        xAxis: {
+	        	title:{
+	        	text: 'Year'
+	        	},
+	            categories: ['1750', '1800', '1850', '1900', '1950', '1980', '2000', '2015', '2050']
+	        },
+	        yAxis: {
+	            title: {
+	                text: 'pH Level'
+	            },
+	            plotLines: [{
+	                value: 0,
+	                width: 1,
+	                color: '#808080'
+	            }]
+	        },
+					tooltip: {
+							valueSuffix: 'pH'
+					},
+	        legend: {
+	            layout: 'vertical',
+	            align: 'right',
+	            verticalAlign: 'middle',
+	            borderWidth: 0
+	        },
+	        series: [{
+	            name: 'pH Level',
+	            data: [8.181, 8.179, 8.171, 8.156, 8.138, 8.104, 8.082, 8.049, 7.824]
+	        }]
+	    });
+	});
+
+	Reveal.addEventListener( 'stats1', function() {
+		var chart = new Highcharts.Chart({
+									colors: ["#7cb5ec", "#f7a35c"],
+									chart: {
+											type: 'line',
+											renderTo: 'container1'
+									},
+
+					title: {
+							text: 'Sea Level Increase',
+							x: -20 //center
+					},
+					subtitle: {
+							text: 'Taking year 1880 as base',
+							x: -20
+					},
+					xAxis: {
+						title:{
+						text: 'Year'
+						},
+							categories: ['1880', '1900', '1920', '1940', '1960', '1980', '2000', '2015']
+					},
+					yAxis: {
+							title: {
+									text: 'Sealevel (mm)'
+							},
+							plotLines: [{
+									value: 0,
+									width: 1,
+									color: '#808080'
+							}]
+					},
+					tooltip: {
+							valueSuffix: 'mm'
+					},
+					legend: {
+							layout: 'vertical',
+							align: 'right',
+							verticalAlign: 'middle',
+							borderWidth: 0
+					},
+					series: [{
+							name: 'Sealevel',
+							data: [0, 24, 52, 64, 92, 138, 186, 245]
+					}]
+			});
+	});
 	</script>
 	<script src="/js/main.js"></script>
 	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
