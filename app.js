@@ -38,17 +38,28 @@ app.get('/users', user.list);
 app.post('/marine',marine.paramRead);
 //app.get('/aquaculturist',marine.paramRead);
 
+var mysql      = require('mysql');
+var connection = mysql.createConnection({
+    host     : 'marineanalyticsolutions.cc3hroyhbtoe.us-west-2.rds.amazonaws.com',
+    user     : 'admin',
+    password : 'admin12345',
+    database: "marine"
+});
+
+
+
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
 
-// 
+//
 
 
 
 
-app.get('/Oceanography', function(req, res) {
-	   res.render('presentation/oceanography', { });
+app.get('/Oceanology', function(req, res) {
+	   res.render('presentation/oceanologist', { });
 	});
 
 app.get('/OceanEngineering', function(req, res) {

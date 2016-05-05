@@ -15,15 +15,15 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta name="description" content="San Jose State University - CMPE 272 - Spring 16 - Project - Team 1, Effect of global warming and industrialization on sea life">
-	<meta name="keywords" content="CMPE, 272, SJSU, global, warming, globalwarming, industrialization,">
-	<title>Global Warming - Hell Hound Approaching?</title>
+	<meta name="description" content="Ocean Engineer">
+	<meta name="keywords" content="Discover the Ocean">
+	<title>Ocean Engineering</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<!-- On iOS Safari, run in full-screen mode -->
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<meta name="author" content="KeyurGolani" />
+	<meta name="author" content="Lucidity - Marine Solutions" />
 
 	<link rel="stylesheet" href="css/normalize1.css">
 	<link rel="stylesheet" href="css/main.css">
@@ -32,6 +32,7 @@
 	<!-- TODO: http://htmlcheats.com/examples/revealjs/switchtheme.html -->
 
 	<script src="/js/vendor/modernizr-2.6.2.min.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 	<!--[if lt IE 9]>
 	<script src="lib/js/html5shiv.js"></script>
 	<![endif]-->
@@ -75,7 +76,9 @@
 <body class="notLoaded">
 <!--[if lt IE 7]>
 <![endif]-->
-
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="/js/dark-blue.js"></script>
 
 	<!-- <div id="outerDiv"> -->
 
@@ -87,7 +90,7 @@
 		</div>
 
 		<div>
-			<h1 style="text-align: center">CMPE 272 - Project Team 1</h1>
+			<h1 style="text-align: center">Ocean Engineer</h1>
 		</div>
 
 		<!-- TODO: Make the slideshow part of other larget div tag to make embedded presentation. -->
@@ -96,76 +99,66 @@
 		<!-- Starting another div tag to put all the slides inside. -->
 		<div class="slides"><!-- Adding first slide -->
 		<section id="section1_id">
-		<h1>A drametic line to infer that we aren't safe</h1>
+		<h1>Constructs a World Underwater</h1>
 		<p>
-			A beautiful animated photo carosal to show the catastrophies due to global warming and pollutions.
+			Aparantly, it seems that we're running out of land.
+			<br>Ocean Engineers are the Answer
+			<br>(in a long term though)
 		</p>
 		</section>
 
 		<section id="section2_id">
-		<h1>Index of the topics to be presented</h1>
+		<h1>Obstacles He Faces</h1>
 		<ul>
 			<li>
-				Index Menu Item 1
+				Sea Level and Pressure influences all the plans
 			</li>
 			<li>
-				Index Menu Item 2
+				Ocean pH Level/Acidity corroses the equipment as well as constructions
 			</li>
 			<li>
-				Index Menu Item 3
-			</li>
-			<li>
-				Index Menu Item 4
-			</li>
-			<li>
-				Index Menu Item 5
+				Ocean Temperature affects Equipment Operability and Construction
 			</li>
 		</ul>
 		</section>
 
 		<section id="section3_id">
-			<section id="section3.1_id">
-				<h1>Index Menu Item 1</h1>
+			<section id="section3.1_id" data-state="stats1">
+				<h1>Analyse Sea Level</h1>
 				<p>
-					Content Index Menu Item 1
+				Ocean Level is rising every year due to melting of Ice
+				<div id="container1" style="min-witdh: 310px; height: 400px; margin: 0 auto">
+				</div>
 				</p>
 			</section>
-			<section id="section3.2_id">
+			<section id="section3.2_id" data-state="stats2">
+				<h1>Analyse Acidity</h1>
+				<p>
+				Oceans are becoming Acidic because of increase in water CO2 level
+				<div id="container2" style="min-witdh: 310px; height: 400px; margin: 0 auto">
+				</p>
 
 			</section>
-			<section id="section3.3_id">
-
+			<section id="section3.3_id" data-state="stats3">
+				<h1>Analyse Heat</h1>
+				<p>
+				Water Temperature is rising every year
+				<div id="container3" style="min-witdh: 310px; height: 400px; margin: 0 auto">
+				</p>
 			</section>
 		</section>
 
 		<section id="section4_id">
-		<h1>Index Menu Item 2</h1>
-		<p>
-			Content Index Menu Item 2
-		</p>
+		<h1>What Can He Benefit?</h1>
+		<h2>
+			Pretty Much Everything!
+		</h2>
+		<ul>
+			<li>You can use sea level and pressure data to estimate the pressure as well as pressure changes in future.</li>
+			<li>Also can use pH level data to predict corrosion on equipment and structures.</li>
+			<li>And, with temprature data you can estimate the operability of equipments underwater in different conditions.</li>
+		</ul>
 		</section>
-
-		<section id="section5_id">
-		<h1>Index Menu Item 3</h1>
-		<p>
-			Content Index Menu Item 3
-		</p>
-		</section>
-
-		<section id="section6_id">
-		<h1>Index Menu Item 4</h1>
-		<p>
-			Content Index Menu Item 4
-		</p>
-		</section>
-
-		<section id="section7_id">
-		<h1>Index Menu Item 5</h1>
-		<p>
-			Content Index Menu Item 5
-		</p>
-		</section>
-
 		</div>
 		</div>
 
@@ -182,7 +175,7 @@
 			rtl: false,
 			embedded: true,
 			help: true,
-			history: true,
+			history: false,
 			controls: true,
 			progress: true,
 			keyboard: true,
@@ -209,6 +202,153 @@
       transition: Reveal.getQueryHash().transition || 'default' // default/cube/page/concave/zoom/linear/fade/none
 
 		});
+	</script>
+	<script>
+	Reveal.addEventListener( 'stats3', function () {
+
+		var chart = new Highcharts.Chart({
+	                colors: ["#7cb5ec", "#f7a35c"],
+	                chart: {
+	                    type: 'line',
+	                    renderTo: 'container3'
+	                },
+
+	        title: {
+	            text: 'Ocean Water Temperature Increase',
+	            x: -20 //center
+	        },
+	        subtitle: {
+	            text: 'Taking year 1920 as base',
+	            x: -20
+	        },
+	        xAxis: {
+	        	title:{
+	        	text: 'Year'
+	        	},
+	            categories: ['1880', '1900', '1920', '1940', '1960', '1980', '2000', '2015']
+	        },
+	        yAxis: {
+	            title: {
+	                text: 'Temperature Increase in Deg Celcius'
+	            },
+	            plotLines: [{
+	                value: 0,
+	                width: 1,
+	                color: '#808080'
+	            }]
+	        },
+					tooltip: {
+							valueSuffix: '°C'
+					},
+	        legend: {
+	            layout: 'vertical',
+	            align: 'right',
+	            verticalAlign: 'middle',
+	            borderWidth: 0
+	        },
+	        series: [{
+	            name: 'Temperature Increase',
+	            data: [0.5, 0.3, 0, 0.4, 0.6, 1.1, 1.4, 1.9]
+	        }]
+	    });
+	});
+
+	Reveal.addEventListener( 'stats2', function () {
+
+		var chart = new Highcharts.Chart({
+	                colors: ["#7cb5ec", "#f7a35c"],
+	                chart: {
+	                    type: 'line',
+	                    renderTo: 'container2'
+	                },
+
+	        title: {
+	            text: 'Ocean water pH level Increase',
+	            x: -20 //center
+	        },
+	        subtitle: {
+	            text: '',
+	            x: -20
+	        },
+	        xAxis: {
+	        	title:{
+	        	text: 'Year'
+	        	},
+	            categories: ['1750', '1800', '1850', '1900', '1950', '1980', '2000', '2015', '2050']
+	        },
+	        yAxis: {
+	            title: {
+	                text: 'pH Level'
+	            },
+	            plotLines: [{
+	                value: 0,
+	                width: 1,
+	                color: '#808080'
+	            }]
+	        },
+					tooltip: {
+							valueSuffix: 'pH'
+					},
+	        legend: {
+	            layout: 'vertical',
+	            align: 'right',
+	            verticalAlign: 'middle',
+	            borderWidth: 0
+	        },
+	        series: [{
+	            name: 'pH Level',
+	            data: [8.181, 8.179, 8.171, 8.156, 8.138, 8.104, 8.082, 8.049, 7.824]
+	        }]
+	    });
+	});
+
+	Reveal.addEventListener( 'stats1', function() {
+		var chart = new Highcharts.Chart({
+									colors: ["#7cb5ec", "#f7a35c"],
+									chart: {
+											type: 'line',
+											renderTo: 'container1'
+									},
+
+					title: {
+							text: 'Sea Level Increase',
+							x: -20 //center
+					},
+					subtitle: {
+							text: 'Taking year 1880 as base',
+							x: -20
+					},
+					xAxis: {
+						title:{
+						text: 'Year'
+						},
+							categories: ['1880', '1900', '1920', '1940', '1960', '1980', '2000', '2015']
+					},
+					yAxis: {
+							title: {
+									text: 'Sealevel (mm)'
+							},
+							plotLines: [{
+									value: 0,
+									width: 1,
+									color: '#808080'
+							}]
+					},
+					tooltip: {
+							valueSuffix: 'mm'
+					},
+					legend: {
+							layout: 'vertical',
+							align: 'right',
+							verticalAlign: 'middle',
+							borderWidth: 0
+					},
+					series: [{
+							name: 'Sealevel',
+							data: [0, 24, 52, 64, 92, 138, 186, 245]
+					}]
+			});
+	});
 	</script>
 	<script src="/js/main.js"></script>
 	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
