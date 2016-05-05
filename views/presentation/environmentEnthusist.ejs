@@ -33,7 +33,7 @@
 
 	<script src="/js/vendor/modernizr-2.6.2.min.js"></script>
 	<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-	
+
 	<!--[if lt IE 9]>
 	<script src="lib/js/html5shiv.js"></script>
 	<![endif]-->
@@ -141,12 +141,10 @@
 				</p>
 
 			</section>
-			<section id="section3.3_id">
-				<p>
-				<div id="container" style="min-witdh: 310px; height: 400px; margin: 0 auto">
-				</div>"
+			<section id="section3.3_id" data-state="stats">
+				<div id="container" style="min-witdh: 600px; height: 400px; margin: 0 auto;">
+				</div>
 					Breeding Pattern
-				</p>
 			</section>
 		</section>
 
@@ -228,53 +226,52 @@
 
 
 <script>
-$(function () {
-
+Reveal.addEventListener( 'stats', function() {
 	var chart = new Highcharts.Chart({
-                colors: ["#7cb5ec", "#f7a35c"],
-                chart: {
-                    type: 'line',
-                    renderTo: 'container'
-                },
+								colors: ["#7cb5ec", "#f7a35c"],
+								chart: {
+										type: 'line',
+										renderTo: 'container'
+								},
 
-        title: {
-            text: 'Sea Level Increase',
-            x: -20 //center
-        },
-        subtitle: {
-            text: 'Taking year 1880 as base',
-            x: -20
-        },
-        xAxis: {
-        	title:{
-        	text: 'Year'
-        	},
-            categories: ['1880', '1900', '1920', '1940', '1960', '1980', '2000', '2015']
-        },
-        yAxis: {
-            title: {
-                text: 'Sealevel (mm)'
-            },
-            plotLines: [{
-                value: 0,
-                width: 1,
-                color: '#808080'
-            }]
-        },
-        tooltip: {
-            valueSuffix: '°C'
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle',
-            borderWidth: 0
-        },
-        series: [{
-            name: 'Sealevel',
-            data: [0, 24, 52, 64, 92, 138, 186, 245]
-        }]
-    });
+				title: {
+						text: 'Sea Level Increase',
+						x: -20 //center
+				},
+				subtitle: {
+						text: 'Taking year 1880 as base',
+						x: -20
+				},
+				xAxis: {
+					title:{
+					text: 'Year'
+					},
+						categories: ['1880', '1900', '1920', '1940', '1960', '1980', '2000', '2015']
+				},
+				yAxis: {
+						title: {
+								text: 'Sealevel (mm)'
+						},
+						plotLines: [{
+								value: 0,
+								width: 1,
+								color: '#808080'
+						}]
+				},
+				tooltip: {
+						valueSuffix: '°C'
+				},
+				legend: {
+						layout: 'vertical',
+						align: 'right',
+						verticalAlign: 'middle',
+						borderWidth: 0
+				},
+				series: [{
+						name: 'Sealevel',
+						data: [0, 24, 52, 64, 92, 138, 186, 245]
+				}]
+		});
 });
 
 </script>
