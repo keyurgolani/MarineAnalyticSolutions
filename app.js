@@ -40,8 +40,8 @@ app.post('/marine',marine.paramRead);
 
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
-    host     : 'marineanalyticsolutions.cc3hroyhbtoe.us-west-2.rds.amazonaws.com',
-    user     : 'admin',
+    host     : '54.201.225.188',
+    user     : 'admin1',
     password : 'admin12345',
     database: "marine"
 });
